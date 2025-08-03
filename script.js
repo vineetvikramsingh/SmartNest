@@ -1,4 +1,4 @@
-// Firebase config
+// here is firebaseconfiguration please keep it safe
 const firebaseConfig = {
   apiKey: "AIzaSyBu4zs_j5LS6WXt83U7acBljCO6WvW9NUE",
   authDomain: "smartnest-home.firebaseapp.com",
@@ -9,15 +9,14 @@ const firebaseConfig = {
   appId: "1:391039769255:web:0f97ce766aa5d3e586d982",
 };
 
-// Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-// Get DOM elements
+
 const loginForm = document.getElementById("loginForm");
 const dashboard = document.getElementById("dashboard");
 const loginBtn = document.getElementById("loginBtn");
 
-// Login event listener
+
 loginBtn.addEventListener("click", () => {
   const email = document.getElementById("email").value.trim();
   const password = document.getElementById("password").value;
@@ -41,7 +40,6 @@ loginBtn.addEventListener("click", () => {
     });
 });
 
-// Start relay control functionality
 function startRelayControl() {
   const db = firebase.database();
 
@@ -57,14 +55,14 @@ function startRelayControl() {
     const toggleButton = document.getElementById(`btn${relay.id}`);
     const relayRef = db.ref("/" + relay.path);
 
-    // Listen for relay state changes
+   
     relayRef.on("value", (snapshot) => {
       const state = snapshot.val();
       statusText.innerText = state ? "ON" : "OFF";
       toggleButton.style.backgroundColor = state ? "green" : "blue";
     });
 
-    // Toggle relay state on button click
+   
     toggleButton.onclick = () => {
       relayRef.get().then((snap) => {
         relayRef.set(!snap.val());
@@ -72,7 +70,7 @@ function startRelayControl() {
     };
   });
 
-  // All OFF button functionality
+
   document.getElementById("allOffBtn").onclick = () => {
     relays.forEach((relay) => {
       db.ref("/" + relay.path).set(false);
@@ -80,7 +78,6 @@ function startRelayControl() {
   };
 }
 
-// Logout functionality
 document.getElementById("logoutBtn").onclick = () => {
   firebase
     .auth()
@@ -94,4 +91,5 @@ document.getElementById("logoutBtn").onclick = () => {
     .catch((error) => {
       alert("Logout failed: " + error.message);
     });
+
 };
