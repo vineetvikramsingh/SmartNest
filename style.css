@@ -9,12 +9,10 @@ body {
   min-height: 100vh;
   justify-content: space-between;
 }
-
 h1 {
   margin-top: 30px;
   font-size: 1.8rem;
 }
-
 .relay-card {
   display: inline-block;
   background-color: white;
@@ -30,12 +28,10 @@ h1 {
   margin-bottom: 10px;
   font-size: 1.3rem;
 }
-
 .relay-card p {
   margin-bottom: 10px;
   font-size: 1rem;
 }
-
 .relay-card button {
   padding: 10px 20px;
   border: none;
@@ -51,7 +47,6 @@ h1 {
 .relay-card button:hover {
   opacity: 0.8;
 }
-
 #allOffBtn,
 #logoutBtn {
   max-width: 300px;
@@ -66,27 +61,21 @@ h1 {
   color: white;
   transition: opacity 0.3s ease;
 }
-
 #allOffBtn {
   background-color: #d32f2f;
 }
-
 #allOffBtn:hover {
   opacity: 0.8;
 }
-
 #logoutBtn {
   background-color: #555;
 }
-
 #logoutBtn:hover {
   opacity: 0.8;
 }
-
 #dashboard {
   display: none;
 }
-
 #loginForm {
   max-width: 400px;
   margin: 80px auto 20px;
@@ -95,7 +84,6 @@ h1 {
   border-radius: 15px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
-
 #loginForm input {
   width: 100%;
   padding: 12px 15px;
@@ -111,7 +99,6 @@ h1 {
 #loginForm input:focus {
   border-color: #1e88e5;
 }
-
 #loginForm button {
   width: 100%;
   background-color: #1e88e5;
@@ -135,7 +122,6 @@ h1 {
   flex-wrap: wrap;
   justify-content: center;
 }
-
 @media (max-width: 700px) {
   .relay-card {
     width: 90%;
@@ -146,7 +132,6 @@ h1 {
     padding: 0 10px 60px;
   }
 }
-
 footer {
   font-size: 0.9rem;
   color: #666;
